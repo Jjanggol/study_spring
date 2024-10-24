@@ -1,5 +1,7 @@
 package study.study_spring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import study.study_spring.domain.Member;
 import study.study_spring.repository.MemberRepository;
 import study.study_spring.repository.MemoryMemberRepository;
@@ -9,10 +11,12 @@ import java.util.Optional;
 
 import static ch.qos.logback.core.joran.spi.ConsoleTarget.findByName;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
